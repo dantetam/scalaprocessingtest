@@ -2,8 +2,6 @@
 
 import java.util.ArrayList;
 
-import vector.*;
-
 public class Player {
 
 	public float posX, posY, posZ;
@@ -19,9 +17,9 @@ public class Player {
 		tarZ = 0;
 	}
 	
-	public Line getLookVector()
+	/*public Line getLookVector()
 	{
 		return new Line(tarX-posX,posX,tarY-posY,posY,tarZ-posZ,posZ);
-	}
+	}*/
 	
 }

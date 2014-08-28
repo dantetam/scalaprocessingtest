@@ -1,4 +1,4 @@
-import processing.core.PApplet;
+/*import processing.core.PApplet;
 import processing.core.PImage;
 import processing.opengl.PGraphics3D;
 import java.util.Random;
@@ -229,7 +229,7 @@ class RecursiveBlock extends PApplet {
 					}
 				}
 				temp[row][col] = max > 0 ? max - minY : 0;
-				/*Entity en = getNearest(candidates,r,c);
+				Entity en = getNearest(candidates,r,c);
 				if (en == null)
 					temp[row][col] = 0;
 				else
@@ -239,7 +239,7 @@ class RecursiveBlock extends PApplet {
 					temp[row][col] = en.topFace();
 					temp[row][col] = temp[row][col] > 0 ? temp[row][col] - minY : 0;
 					temp[row][col] -= 10;
-				}*/
+				}
 				col++;
 			}
 			col = 0;
@@ -399,4 +399,4 @@ class RecursiveBlock extends PApplet {
 		public int topFace() {return (int)(posY + sizeY/2);}
 	}
     
-}
+}*/
