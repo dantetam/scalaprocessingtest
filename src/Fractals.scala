@@ -9,7 +9,7 @@ object Fractals
 
 class Fractals extends PApplet
 {
-	var lines = List()
+	var lines = List[Line]()
   
 	override def setup()
 	{
@@ -19,16 +19,23 @@ class Fractals extends PApplet
 	
 	override def draw()
 	{
+		//println(lines.size)
 		for (i <- 0 until lines.size)
 		{
+		    //println(i)
 		    var line = lines(i)
 		    //TODO: Get the line's info and display it
+		    //println(line.x1)
+			super.line(line.x1, line.y1, line.x2, line.y2)
 		}
 	}
   
-	class Line(var x1: Float, var x2: Float, var y1: Float, var y2: Float)
+	class Line(var a: Float, var b: Float, var c: Float, var d: Float)
 	{
-		
+		var x1 = a
+		var y1 = b
+		var x2 = c
+		var y2 = d
 	}
 	
 	def recursivePattern(x: Int, y: Int, l: Int, times: Int)
@@ -49,14 +56,14 @@ class Fractals extends PApplet
 	
 	def makeX(x: Float, y: Float, l: Float)
 	{
-		lines :+ new Line( x-(l*r2()/4),y-(l*r2()/4),x+(l*r2()/4),y+(l*r2()/4) );
-		lines :+ new Line( x-(l*r2()/4),y+(l*r2()/4),x+(l*r2()/4),y-(l*r2()/4) );
+		lines = lines :+ new Line( x-(l*r2()/4),y-(l*r2()/4),x+(l*r2()/4),y+(l*r2()/4) );
+		lines = lines :+ new Line( x-(l*r2()/4),y+(l*r2()/4),x+(l*r2()/4),y-(l*r2()/4) );
 	}
 	
 	def makeT(x: Float, y: Float, l: Float)
 	{
-		lines :+ new Line( x-(l/2),y,x+(l/2),y );
-		lines :+ new Line( x,y-(l/2),x,y+(l/2) );
+		lines = lines :+ new Line( x-(l/2),y,x+(l/2),y );
+		lines = lines :+ new Line( x,y-(l/2),x,y+(l/2) );
 	}
 	
 }
