@@ -16,14 +16,29 @@ class HelloWorld extends PApplet
 {
 	override def setup() =
 		{
-		size(1000,1000)
+		size(500,500)
 		}
 
 	override def draw() =
 		{
-		background(255)
+		background(150,225,255)
 		fill(0)
-		rect(500,500,100,100)
+		noStroke()
+		var rows, cols = 100
+		for (i <- 0 until rows)
+		{
+			for (j <- 0 until cols)
+			{
+			    var widthBoxX: Float = this.width/rows;
+			    var widthBoxY: Float = this.width/cols;
+			    //println(i.toFloat/rows.toFloat)
+			    fill(i.toFloat/rows.toFloat*(150/2)+j.toFloat/cols.toFloat*(150/2),
+			        i.toFloat/rows.toFloat*(225/2)+j.toFloat/cols.toFloat*(225/2),
+			        i.toFloat/rows.toFloat*(255/2)+j.toFloat/cols.toFloat*(255/2)
+			        );
+				rect(i*widthBoxX,j*widthBoxY,widthBoxX,widthBoxY)
+			}
+		}
 		}	
 
 	override def keyPressed() =
