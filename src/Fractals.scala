@@ -10,16 +10,16 @@ object Fractals
 class Fractals extends PApplet
 {
 	var lines = List[Line]()
-  
+	
 	override def setup()
 	{
-		size(1366,768)
-		recursivePattern(1366/4,768/2 - 30,350,5)
+		size(1500,900)
+		recursivePattern(width/2,height/2,450,6)
 	}
 	
 	override def draw()
 	{
-		//println(lines.size)
+		background(255)
 		for (i <- 0 until lines.size)
 		{
 		    //println(i)
